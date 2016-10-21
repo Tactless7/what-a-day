@@ -3,29 +3,54 @@
 <head>
 	<meta charset="UTF-8">
 	<title>What a day</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+	<div id="dayOfWeek"></div>
 	<div id="message"></div>
 
 	<div class="container">
-		<input type="number" id="date" value="26" min="1" max="31">
-		<select name="select" id="month">
-			<option value="0">January</option>
-			<option value="1">February</option>
-			<option value="2">March</option>
-			<option value="3">April</option>
-			<option value="4" selected>May</option>
-			<option value="5">June</option>
-			<option value="6">July</option>
-			<option value="7">August</option>
-			<option value="8">September</option>
-			<option value="9">October</option>
-			<option value="10">November</option>
-			<option value="11">December</option>
-		</select>
-		<input type="number" id="year" value="1991" min="1">
-		<button id="check">Vérifier</button>
+		<div class="inputBlock">
+			<div>
+				<span class="label">Jour</span>
+			</div>
+			<div>
+				<input type="number" id="date" value="26" min="1" max="31">
+			</div>
+		</div>
+		<div class="inputBlock">
+			<div>
+				<span class="label">Mois</span>
+			</div>
+			<div>
+				<select name="select" id="month">
+					<option value="0">Janvier</option>
+					<option value="1">Février</option>
+					<option value="2">Mars</option>
+					<option value="3">Avril</option>
+					<option value="4" selected>Mai</option>
+					<option value="5">Juin</option>
+					<option value="6">Juillet</option>
+					<option value="7">Août</option>
+					<option value="8">Septembre</option>
+					<option value="9">Octobre</option>
+					<option value="10">Novembre</option>
+					<option value="11">Decembre</option>
+				</select>
+			</div>
+		</div>
+		<div class="inputBlock">
+			<div>
+				<span class="label">Année</span>
+			</div>
+			<div>
+				<input type="number" id="year" value="1991" min="1">
+			</div>
+		</div>
+	</div>
+	<div class="buttonContainer">
+		<button id="check" class="check">Vérifier</button>
 	</div>
 
 	<script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
