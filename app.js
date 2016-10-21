@@ -2,7 +2,6 @@
 	'use strict';
 	var app = {
 		dayOfWeek: null,
-		weekDays: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
 		data: {},
 		moment: null,
 		init: function(){
@@ -12,27 +11,25 @@
 			$('#check').on('click', this.runCheck.bind(this));
 			$('#dayOfWeek').on('click', '#restart', this.undisplay.bind(this));
 		},
+		runCheck: function(){
+			this.undisplay();
+			if(this.checkDate() && this.checkYear()){
+					this.getData();
+					// console.log(this.moment.isValid);
+					this.getDay();
+					this.displayDay();	
+			}	
+		},
 		getData: function(){
 			this.data = {
 				year: parseInt($('#year').val()),
 				month: parseInt($('#month').val()),
 				day: parseInt($('#date').val())
 			}
-		},
-		transformMoment: function(){
-			this.moment = moment(this.data);
+			this.moment = moment(this.data).locale('fr');
 		},
 		getDay: function(){
-			this.dayOfWeek = this.weekDays[this.moment.day()];
-		},
-		runCheck: function(){
-			this.undisplay();
-			if(this.checkDate() && this.checkYear()){
-				this.getData();
-				this.transformMoment();
-				this.getDay();
-				this.displayDay();
-			}
+			this.dayOfWeek = this.moment.format('dddd');
 		},
 		displayDay: function(){
 			$('#dayOfWeek').addClass('overlay');

@@ -77,7 +77,7 @@ select, input, .check {
 	line-height: 1.9em;
 	background-color: #9055A2;
 	color: #D499B9;
-	position: absolute;
+	position: fixed;
 	text-align: center;
 }
 
